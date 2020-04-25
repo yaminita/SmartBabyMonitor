@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Smart Baby Monitor</string>
+    <string name="smart_baby_monitor">Smart Baby Monitor</string>
+    <string name="lets_begin">Let\'s Begin!</string>
+    <string name="enter_your_email" translatable="false">Enter your email:</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="create_account">Create Account</string>
+    <string name="baby_camera">BabyCam</string>
+    <string name="parents_controller">Parent\'s Controller</string>
+    <string name="help">Help</string>
+    <string name="temperature">Temperature Baby Room</string>
+    <string name="humidity">Humidity Baby Room</string>
+    <string name="Temperature">temperature</string>
+    <string name="Humidity">humidity</string>
+</resources>

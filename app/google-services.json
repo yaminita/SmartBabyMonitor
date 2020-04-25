@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "299368439638",
+    "firebase_url": "https://smart-baby-monitor-d19e1.firebaseio.com",
+    "project_id": "smart-baby-monitor-d19e1",
+    "storage_bucket": "smart-baby-monitor-d19e1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299368439638:android:94090ba6dd074a32f900f7",
+        "android_client_info": {
+          "package_name": "com.example.smartbabymonitor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299368439638-ju2m8a6i8tcsv1ijo744c9s20l7dpj7t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.smartbabymonitor",
+            "certificate_hash": "aeaecd68404a718bd29aa1ea3d158371a50b3dec"
+          }
+        },
+        {
+          "client_id": "299368439638-p2j3ovj5ca3ue2o21odh1t6rjo776uqa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApcn4wSdEOTy54aFJL48zhsLWJcAW-GpI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299368439638-p2j3ovj5ca3ue2o21odh1t6rjo776uqa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
