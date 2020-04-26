@@ -14,6 +14,7 @@ import android.graphics.Bitmap;
 import android.media.MediaRecorder;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -52,7 +53,7 @@ public class ParentsController extends AppCompatActivity {
     TextView humid;
     Button mRecordBtn;
 
-    MediaRecorder recorder;
+    private MediaRecorder recorder =null;
     String fileName = null;
     private static final String LOG_TAG = "Record_Log";
 
@@ -62,8 +63,8 @@ public class ParentsController extends AppCompatActivity {
         setContentView(R.layout.activity_parents_controller);
 
         mRecordBtn = (Button) findViewById(R.id.button4);
-        fileName = getExternalCacheDir().getAbsolutePath();
-        fileName += "/recorded_audio.3gp";
+        //fileName = Environment.getExternalStorageDirectory().getPath();
+        //fileName += "/recorded_audio.3gp";
 
 
 
@@ -130,6 +131,21 @@ public class ParentsController extends AppCompatActivity {
 //                }
 //
 //                return false;
+//            }
+//        });
+//        mRecordBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                fileName = Environment.getExternalStorageDirectory().getAbsolutePath();
+//                fileName += "/recorded_audio.3gp";
+//
+//                try {
+//                    recorder.prepare();
+//                    recorder.start();
+//                }catch(IOException e){
+//                    e.printStackTrace();
+//                }
+//                Toast.makeText(ParentsController.this, "Recording", Toast.LENGTH_SHORT ).show();
 //            }
 //        });
     }

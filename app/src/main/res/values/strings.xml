@@ -15,4 +15,8 @@
     <string name="Temperature">temperature</string>
     <string name="Humidity">humidity</string>
     <string name="voice_record">voice record</string>
+    <string name="skip_menu">Skip</string>
+    <string name="next_menu"><![CDATA[Next >]]></string>
+    <string name="back_menu">Back</string>
+    <string name="finish_menu">Done!</string>
 </resources>
