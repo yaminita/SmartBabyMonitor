@@ -60,18 +60,13 @@ public class Registration extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     FirebaseUser user = mAuth.getCurrentUser();
+                                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                    startActivity(intent);
                                     Toast.makeText(getApplicationContext(), "Signed In user: " + user.getEmail(), Toast.LENGTH_SHORT).show();
                                 } else {
                                     Toast.makeText(getApplicationContext(), "Failed to sign in user: ", Toast.LENGTH_SHORT).show();
                                 }
-                                //Button bLogin  = (Button) findViewById(R.id.button);
-                                bLogin.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View v) {
-                                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                                        startActivity(intent);
-                                    }
-                                });
+
                             }
                         });
             }
