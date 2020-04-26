@@ -23,8 +23,8 @@
 
     <com.jjoe64.graphview.GraphView
         android:id="@+id/graph"
-        android:layout_width="183dp"
-        android:layout_height="85dp"
+        android:layout_width="146dp"
+        android:layout_height="76dp"
         android:layout_marginStart="107dp"
         android:layout_marginTop="18dp"
         android:layout_marginEnd="121dp"
@@ -35,70 +35,85 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="71dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="68dp"
-        android:scaleType="fitCenter"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton3"
-        app:layout_constraintTop_toBottomOf="@+id/webView"
-        app:srcCompat="@android:drawable/presence_audio_online" />
-
-    <ImageButton
         android:id="@+id/imageButton3"
         android:layout_width="68dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="48dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="56dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
         app:layout_constraintEnd_toStartOf="@+id/imageButton7"
+        app:layout_constraintStart_toEndOf="@+id/button4"
         app:layout_constraintTop_toBottomOf="@+id/webView"
         app:srcCompat="@android:drawable/ic_menu_camera" />
 
     <ImageButton
         android:id="@+id/imageButton7"
-        android:layout_width="72dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="32dp"
+        android:layout_width="68dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="58dp"
+        android:layout_marginBottom="2dp"
         android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageButton3"
         app:layout_constraintTop_toBottomOf="@+id/webView"
         app:srcCompat="@drawable/music" />
 
     <WebView
         android:id="@+id/webView"
-        android:layout_width="304dp"
-        android:layout_height="207dp"
+        android:layout_width="296dp"
+        android:layout_height="188dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView34" />
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="176dp"
-        android:layout_height="46dp"
+        android:layout_width="257dp"
+        android:layout_height="43dp"
         android:layout_marginStart="52dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="53dp"
+        android:layout_marginBottom="17dp"
         android:hint="@string/Temperature"
+        app:layout_constraintBottom_toTopOf="@+id/graph"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.446"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton7" />
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="187dp"
-        android:layout_height="59dp"
+        android:layout_width="248dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="14dp"
         android:layout_marginBottom="124dp"
         android:hint="@string/Humidity"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/graph" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="68dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="54dp"
+        android:text="@string/voice_record"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/webView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

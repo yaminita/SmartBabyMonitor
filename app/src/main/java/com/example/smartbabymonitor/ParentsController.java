@@ -11,11 +11,11 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.media.MediaRecorder;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.DropBoxManager;
-import android.provider.MediaStore;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
@@ -36,6 +36,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.database.core.Tag;
 import com.jjoe64.graphview.GraphView;
 
+import java.io.IOException;
+
 public class ParentsController extends AppCompatActivity {
     private static final int REQUEST_CODE_GET_CONTENT = 10;
     private static final int REQUEST_CODE_IMAGE_CAPTURE = 20;
@@ -48,12 +50,23 @@ public class ParentsController extends AppCompatActivity {
     ImageButton bcamera;
     TextView tempera;
     TextView humid;
-    //private GraphView tempView;
+    Button mRecordBtn;
+
+    MediaRecorder recorder;
+    String fileName = null;
+    private static final String LOG_TAG = "Record_Log";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parents_controller);
+
+        mRecordBtn = (Button) findViewById(R.id.button4);
+        fileName = getExternalCacheDir().getAbsolutePath();
+        fileName += "/recorded_audio.3gp";
+
+
+
         database = FirebaseDatabase.getInstance();
         temp = database.getReference("temperature");
         hum = database.getReference("humidity");
@@ -62,6 +75,7 @@ public class ParentsController extends AppCompatActivity {
         tempera = (TextView) findViewById(R.id.textView5);
         humid = (TextView) findViewById(R.id.textView4);
         //tempView = (GraphView) findViewById(R.id.graph);
+
 
         ValueEventListener changeListener = new ValueEventListener() {
             @Override
@@ -105,8 +119,40 @@ public class ParentsController extends AppCompatActivity {
                 mwebView.loadUrl(piAddr);
             }
         });
+//        mRecordBtn.setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View v, MotionEvent event) {
+//                if(event.getAction()==MotionEvent.ACTION_DOWN){
+//                    startRecording();
+//
+//                }else if(event.getAction()==MotionEvent.ACTION_UP){
+//                    stopRecording();
+//                }
+//
+//                return false;
+//            }
+//        });
+    }
+    private void startRecording(){
+        recorder = new MediaRecorder();
+        recorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+        recorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
+        recorder.setOutputFile(fileName);
+        recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
 
+        try {
+            recorder.prepare();
+        } catch (IOException e) {
+            Log.e(LOG_TAG, "prepare() failed");
+        }
 
+        recorder.start();
+    }
+
+    private void stopRecording(){
+        recorder.stop();
+        recorder.release();
+        recorder = null;
     }
 
 }
