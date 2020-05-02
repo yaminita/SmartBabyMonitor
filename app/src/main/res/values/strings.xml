@@ -20,4 +20,7 @@
     <string name="back_menu">Back</string>
     <string name="finish_menu">Done!</string>
     <string name="bold">bold</string>
+    <string name="play_button">PLAY</string>
+    <string name="play_text">Play</string>
+    <string name="pause_text">Pause</string>
 </resources>
