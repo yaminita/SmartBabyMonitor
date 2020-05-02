@@ -84,6 +84,8 @@ public class Registration extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     FirebaseUser user = mAuth.getCurrentUser();
                                     Toast.makeText(getApplicationContext(), "Created user: " + user.getEmail(), Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                    startActivity(intent);
                                 } else {
                                     Toast.makeText(getApplicationContext(), "Failed to create user: ", Toast.LENGTH_SHORT).show();
                                 }

@@ -10,13 +10,9 @@ import androidx.core.content.ContextCompat;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.media.MediaRecorder;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
-import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
@@ -29,45 +25,48 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.database.core.Tag;
-import com.jjoe64.graphview.GraphView;
-
 import java.io.IOException;
 
 public class ParentsController extends AppCompatActivity {
     private static final int REQUEST_CODE_GET_CONTENT = 10;
     private static final int REQUEST_CODE_IMAGE_CAPTURE = 20;
     private static final int REQUEST_CODE_PERMISSIONS_CAMERA = 30;
+
+    // Variable for the Databases/temperature & humidity
     FirebaseDatabase database;
     DatabaseReference temp;
     DatabaseReference hum;
+
+    // string which contains the raspberry address / port
     String piAddr = "http://192.168.43.87:8081/";
     WebView mwebView;
     ImageButton bcamera;
     TextView tempera;
     TextView humid;
-    Button mRecordBtn;
 
-    private MediaRecorder recorder =null;
-    String fileName = null;
-    private static final String LOG_TAG = "Record_Log";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parents_controller);
 
-        mRecordBtn = (Button) findViewById(R.id.button4);
-        //fileName = Environment.getExternalStorageDirectory().getPath();
-        //fileName += "/recorded_audio.3gp";
+        ImageButton music = (ImageButton) findViewById(R.id.imageButton7);
+        // Start a new class music
+        music.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Music.class);
+                startActivity(intent);
+            }
 
-
-
+        });
+        // Create an instance to the Databases which connects to the Raspberry pi
         database = FirebaseDatabase.getInstance();
         temp = database.getReference("temperature");
         hum = database.getReference("humidity");
@@ -75,29 +74,21 @@ public class ParentsController extends AppCompatActivity {
 
         tempera = (TextView) findViewById(R.id.textView5);
         humid = (TextView) findViewById(R.id.textView4);
-        //tempView = (GraphView) findViewById(R.id.graph);
 
-
-        ValueEventListener changeListener = new ValueEventListener() {
+         //Get the temperature readings from the Database to the app
+        temp.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-
-                //GraphView tempView = (GraphView) findViewById(R.id.graph);
-
-                if(dataSnapshot.hasChildren()){
-                    String temperature = dataSnapshot.getValue().toString();
-                    tempera.setText(temperature);
-
-                }
-
-                //showChart(dataVals);
+                String temperature = dataSnapshot.getValue().toString();
+                tempera.setText(  temperature);
             }
+
             @Override
             public void onCancelled(DatabaseError databaseError) {
             }
-        };
-        temp.addValueEventListener(changeListener);
+        });
 
+        // Get the humidity readings from thef Database to the app
         hum.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -112,63 +103,14 @@ public class ParentsController extends AppCompatActivity {
 
         ImageButton bCamera = findViewById(R.id.imageButton3);
 
+        //Button bcamera which calls the string variable which contains the raspberry pi camera address/port
         bCamera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              //takePictureFromCamera();
                 WebView mwebView  = findViewById(R.id.webView);
                 mwebView.loadUrl(piAddr);
             }
         });
-//        mRecordBtn.setOnTouchListener(new View.OnTouchListener() {
-//            @Override
-//            public boolean onTouch(View v, MotionEvent event) {
-//                if(event.getAction()==MotionEvent.ACTION_DOWN){
-//                    startRecording();
-//
-//                }else if(event.getAction()==MotionEvent.ACTION_UP){
-//                    stopRecording();
-//                }
-//
-//                return false;
-//            }
-//        });
-//        mRecordBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                fileName = Environment.getExternalStorageDirectory().getAbsolutePath();
-//                fileName += "/recorded_audio.3gp";
-//
-//                try {
-//                    recorder.prepare();
-//                    recorder.start();
-//                }catch(IOException e){
-//                    e.printStackTrace();
-//                }
-//                Toast.makeText(ParentsController.this, "Recording", Toast.LENGTH_SHORT ).show();
-//            }
-//        });
-    }
-    private void startRecording(){
-        recorder = new MediaRecorder();
-        recorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-        recorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
-        recorder.setOutputFile(fileName);
-        recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
-
-        try {
-            recorder.prepare();
-        } catch (IOException e) {
-            Log.e(LOG_TAG, "prepare() failed");
-        }
-
-        recorder.start();
-    }
-
-    private void stopRecording(){
-        recorder.stop();
-        recorder.release();
-        recorder = null;
     }
 
 }

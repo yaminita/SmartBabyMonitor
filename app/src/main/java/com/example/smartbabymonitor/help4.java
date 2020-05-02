@@ -13,7 +13,7 @@ public class help4 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help4);
-
+        // Buttons which contains the slides for the Menu Help
         Button back = (Button) findViewById(R.id.button13);
         Button finish = (Button) findViewById(R.id.button14);
 

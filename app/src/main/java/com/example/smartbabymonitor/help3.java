@@ -14,6 +14,7 @@ public class help3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help3);
 
+        // Buttons which contains the slides for the Menu Help
         Button back = (Button) findViewById(R.id.button11);
         Button next = (Button) findViewById(R.id.button12);
 
