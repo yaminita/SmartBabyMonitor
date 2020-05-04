@@ -7,6 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+/**
+ * Created by Yamina Santillan x16110561
+ * Main Activity which contains all the parents controller and the help menu in the app.
+ */
+
 public class MainActivity extends AppCompatActivity {
 
     @Override

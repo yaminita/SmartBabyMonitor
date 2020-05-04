@@ -6,6 +6,12 @@ import android.os.Bundle;
 import android.content.Intent;
 import android.os.Handler;
 
+/**
+ * Created by Yamina Santillan
+ * Splash Screen Activity which contains a nice intro to the baby app.
+ *
+ */
+
 public class SplashScreen extends AppCompatActivity {
     private static final int DELAY_MILLISECONDS = 2000;
 

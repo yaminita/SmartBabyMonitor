@@ -33,6 +33,13 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import java.io.IOException;
 
+/**
+ * Created by Yamina Santillan
+ * Parents Controller Activity which contains the controller for the raspberry camera and the panel to see the
+ * temperature and humidity readings in the baby's room..
+ *
+ */
+
 public class ParentsController extends AppCompatActivity {
     private static final int REQUEST_CODE_GET_CONTENT = 10;
     private static final int REQUEST_CODE_IMAGE_CAPTURE = 20;

@@ -7,16 +7,29 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.SeekBar;
 import android.widget.Toast;
 
 import java.io.IOException;
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Created by Yamina Santillan  x16110561
+ * Music Activity which contains a nice music for sleeping the baby..
+ *
+ */
 
 public class Music extends AppCompatActivity {
 
-    private MediaPlayer mediaPlayer;
+    MediaPlayer mediaPlayer;
     private Button playButton;
     private SeekBar seekBar;
 
@@ -29,7 +42,7 @@ public class Music extends AppCompatActivity {
 
         //Instanciate the media Player and create the media to play the music
         mediaPlayer = new MediaPlayer();
-        //mediaPlayer = MediaPlayer.create(Music.this, R.raw.lullabygoodnight);
+       // mediaPlayer = MediaPlayer.create(Music.this, R.raw.lullabygoodnight);
         try {
             mediaPlayer.setDataSource("https://firebasestorage.googleapis.com/v0/b/smart-baby-monitor-d19e1.appspot.com/o/rockabyebaby.mp3?alt=media&token=5c1977f5-8493-43b1-a0a6-2671357bcb5b");
         }catch (IOException e){
@@ -102,5 +115,4 @@ public class Music extends AppCompatActivity {
             mediaPlayer.release();
         }
     }
-
 }

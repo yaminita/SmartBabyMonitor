@@ -7,6 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+/**
+ * Created by Yamina Santillan x16110561
+ * Help Activity which contains the instructions of how to manage the smart baby app..
+ * Contains 4 activities help, help2, help3 and help4 connected through out buttons.
+ */
+
 public class Help extends AppCompatActivity {
 
     @Override

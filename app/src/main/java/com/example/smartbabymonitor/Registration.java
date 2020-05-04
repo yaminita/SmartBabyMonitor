@@ -19,6 +19,12 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+/**
+ * Created by Yamina Santillan
+ * Registration Activity which contains the sign up/created an account, login and sign out of the application..
+ * User validation implemented in the application.
+ */
+
 public class Registration extends AppCompatActivity {
     FirebaseDatabase database;
     DatabaseReference myRef;

@@ -23,4 +23,6 @@
     <string name="play_button">PLAY</string>
     <string name="play_text">Play</string>
     <string name="pause_text">Pause</string>
+    <string name="good_night_song">Goog Night Song</string>
+    <string name="twinkle_song">Twinkle Little Star</string>
 </resources>
