@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "smart-baby-monitor-d19e1",
+  "private_key_id": "f13cf3705a26b6a1a9f531b9edfb7e8c3b50e44a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC8v0sZfdZQKqWy\nPzL3DB+2odkDbBi+2HvpA8gZKY5dO9nmqMNR8bTBi8MKRJTXpcAImCT/VdiHu7Zz\n42+GJthpTulBVp5TsHY6uwJy/WtHG1V0WSukr24oeow1q78lAKfR2qLjpMEX173S\nHGNHXwT10RSrL7O0kgn1qApkf5zmYWKXc+YLOK+ANFVTQ3byzlyPYFUZFel4d/Ql\nvQs/pPZNeG0BMmjisnXRGayQwjqWDMfulGeYgrcLAI7smWvwnlVy0djhJhhESGPt\nhUP5Q2g/Tsrg/DSV7G4cCZ/Bat3rFtjUz0nrYnFyY72BR7GhBwHNqwL8bCJgVvQi\n+EHU1vWXAgMBAAECggEADepUH2NM8Oi1m50Xy4MiaWtB3epslQSbEHRRBQEXBMR1\nwN3E795c80uaPw0MV8bzQyiLl1ZdM7CaquBkATHaKnVnZZ186CWhdpxn+bgf3lFJ\n4EPDH6dq/MmZwbE37LX0j9h8wg5Y/NvqgjpjW8hjfyE0uWQ3oJxUGj9GON+Rq6H2\nOhvLdrVzAlyRQ79Nm16ABGAmkhoJdz5RvJYfolBzYhORhk+EFm3Qw4BC0wQLahQ8\nwMMblp1nQVQ1GE+0GldGDxkBonGx0g6GwKXzPBGp8SHtr1PrUKuCbdy3n//B2iTc\nZrn9MYVPtgGqvQ+NHG/hI5HZtC2k1ri7n1YNVfQh0QKBgQD/ArfBtiO6QfcuHF9d\nG8EhYZotiw8+pPANV0yVmHhz8yXiDRT8ATwVHGz7g1jfsfLoO3rmbd6dUBD67N8P\neYSpTW+VDyi9s7X0T/B3LxridroKvV2NMeRjWScqEpbb22g6oAd3FHY+O0vXjncz\nV+99jytYzs2fOfhKNAiNyl9bcQKBgQC9esLkuxnLXqfGj7AJW741Bf7sfcv8DQjZ\nMHoERu+Cb6f3yFqRerITFuePZgcoxdLXsZ+btGtnj6faaw/WrgN3k9BQqSi6VbiJ\nL8tODsAuh9Y+D9XkYWsD3p/QAhkMTC7kzUyVRbSXn4ZcaaQRdUvi/IpKEe7Nbzk2\neTgYlPkNhwKBgCkp9CWl1CCV02OzGsW53DQaQDwHzX8sOr+8jtU7Fn6JCl1yBSgk\nvuEdhI4ZBridTfuk1lLp+1xjd0o6AEvMLtjxcgiauNXec4mrecKTbQCPb7qaFMbc\n/eP3mTXWaFm3Eh0chff36ppjEfwKuD0mfbdD7Bha0aBZSDYaLiNNPpVRAoGBAIYU\n4OVLIS2whbkU5NU6fpa273Yabsal0qUekLmGGOaMbKgCt1RLJsgrZSEsadSIaHMJ\n1pAwU/Csz3LYYBTifsGXb8okahWxoywxDgTmm0hSB2FTg2BhL4FFgIGJeoAhSO3P\n+WmIMgs5b7LlbpyMDG9LlfBkUEA/fJT3oqKCiNrxAoGAEM4QSGBJHhGW8CpF70oJ\nXl6P3VGEQXWLcE8OHrqPBVrZ2elqfP3TNMHjGF9P71Mp581bTMXPnOIZA3yQgF/c\nAJNBmhp5sHxUwLl5l8gu3EhELDr6vsV2jtXgWunDd9OT+8UQh+ZG9XSg0v77xMTc\nWjsvlDfwGGRvgpOEqtbWdYY=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-7nzb2@smart-baby-monitor-d19e1.iam.gserviceaccount.com",
+  "client_id": "114567203150785105997",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-7nzb2%40smart-baby-monitor-d19e1.iam.gserviceaccount.com"
+}
